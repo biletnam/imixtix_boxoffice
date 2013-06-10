@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="component">
+    <name>com_imixtix_boxoffice</name>
+    <creationDate>2013-06-10</creationDate>
+    <copyright>Copyright (C) 2013. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>ImixTix</author>
+    <authorEmail>info@imixtix.com</authorEmail>
+    <authorUrl>http://www.imixtix.com</authorUrl>
+    <version>1.0.0</version>
+    
+    <description>An additional component to facilitate boxoffice sales for Imixtix, the Event Ticketting and Management, component for event planners</description>
+    
+    <!-- runs on install to create DB-->
+  
+
+
+<!--//executed when component is installed for the first time-->
+<install folder="admin">
+    <sql>
+        <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+    </sql>
+</install>
+
+
+<!--//executed when component is uninstalled-->
+<uninstall folder="admin">
+    <sql>
+        <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+    </sql>
+</uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>imixtix_boxoffice.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+		<folder>assets</folder>
+		<folder>includes</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    
+    <languages folder="site">
+        <language tag="en-GB">language/en-GB.com_imixtix_boxoffice.ini</language>
+    </languages>
+    
+    
+    <administration>
+        <menu img="components/com_imixtix/assets/images/s_com_imixtix.png" >ImixTix BoxOffice</menu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>imixtix_boxoffice.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>includes</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        
+        
+        <languages folder="administrator">
+            <language tag="en-GB">language/en-GB.com_imixtix_boxoffice.ini</language>
+        </languages>
+    </administration>
+
+</extension>
